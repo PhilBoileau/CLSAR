@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517421211598.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E920E109",
+    "lastKnownWriteTime" : 1517423812,
+    "last_content_update" : 1517423812763,
+    "path" : "~/Phil/CLSAR_files/CLSAR/R/summaryTable.R",
+    "project_path" : "R/summaryTable.R",
+    "properties" : {
+        "cursorPosition" : "9,16",
+        "scrollLine" : "17"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

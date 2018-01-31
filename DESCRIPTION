@@ -1,0 +1,14 @@
+Package: CLSAR
+Title: Helper Functions for CLSA Data
+Version: 0.1.0
+Description: A set of functions to be used on CLSA data.
+Authors@R: c( 
+            person("Phil", "Boileau", role = c("aut", "cre"), email = "philippe.boileau@rimuhc.ca"),
+            person("Geva", "Maimon", role = c("aut"), email = "geva.maimon@rimuhc.ca")
+            )
+Depends: R(>= 3.4.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: no
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1

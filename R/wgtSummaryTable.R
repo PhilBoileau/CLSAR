@@ -16,12 +16,11 @@ wgtSummaryTable <- function(vect, wgts, categories, catname, missingValues = c()
   numRows <- length(levels(as.factor(categories)))
   
   # count the number of missing variables
-  vectMiss <- as.matrix(aggregate(vect, by=list(categories),
-                                  FUN = (
-                                    function(x){
-                                      sum(wgts[is.na(x)]) +
-                                        sum(wgts[x %in% missingValues])
-                                    })))[, -1]
+  vectMiss <- matrix(NA, ncol = 1, nrow = numRows)
+  for(i in 1:numRows){
+    vectMiss[i, ] <- sum(wgts[levels(as.factor(categories))[i] == as.factor(categories) &
+                                (is.na(vect) | vect %in% missingValues)])
+  }
   
   # remove the missing variables from the vector, weights and categories
   wgts <- wgts[!is.na(vect) & !(vect %in% missingValues)]

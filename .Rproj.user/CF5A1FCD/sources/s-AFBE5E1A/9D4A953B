@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517840897471.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9D4A953B",
+    "lastKnownWriteTime" : 1517840971,
+    "last_content_update" : 1517840971282,
+    "path" : "~/Phil/CLSAR_files/CLSAR/R/wgtSummaryTable.R",
+    "project_path" : "R/wgtSummaryTable.R",
+    "properties" : {
+        "cursorPosition" : "15,42",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

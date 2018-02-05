@@ -1,33 +1,24 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
-# CLSAR
+CLSAR
+=====
 
 CLSAR is a collection of R functions that makes working with CLSA data easier.
 
-## Installation
+Installation
+------------
 
 You can install CLSAR from github with:
 
-```{r gh-installation, eval = FALSE}
+``` r
 # install.packages("devtools")
 devtools::install_github("PhilBoileau/CLSAR")
 ```
 
-## List of Functions
+List of Functions
+-----------------
 
-```{r example, eval=FALSE}
+``` r
 
 summaryTable()
 wgtSummaryTable()

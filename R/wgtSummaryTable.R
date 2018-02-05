@@ -13,7 +13,7 @@
 #' @examples \dontrun{
 #'
 #' }
-summaryTable <- function(vect, , weights, categories, catname, missingValues = c()){
+summaryTable <- function(vect, weights, categories, catname, missingValues = c()){
 
   # compute the summary of the vector values
   vectSummary <- as.matrix(aggregate(vect[!(vect %in% missingValues) & !is.na(vect)],

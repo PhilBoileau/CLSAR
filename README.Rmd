@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 # CLSAR
 
-The goal of CLSAR is to ...
+CLSAR is a collection of R functions that makes working with CLSA data easier.
 
 ## Installation
 

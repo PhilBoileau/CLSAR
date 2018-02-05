@@ -4,7 +4,8 @@
 #' @param v2 Variable 2
 #'
 #' @return TRUE if v1 or v2 are both non-NA or NA. FALSE if they do ot match.
-#'
+#' @export
+#' 
 compareNA <- function(v1, v2) {
   
   # returns TRUE if v1 and v2 are equal, NA otherwise

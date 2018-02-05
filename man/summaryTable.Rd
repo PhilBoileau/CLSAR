@@ -21,9 +21,3 @@ Matrix of stratified summaries
 \description{
 Create stratified summary tables
 }
-\examples{
-\dontrun{
-summaryTable(tra3.2$COG_AFT_SCORE_2_TRM, tra3.2$SEX_ASK_TRM, "Gender")
-# produces a summary table of COG_AFT_SCORE_2_TRM stratified by gender
-}
-}

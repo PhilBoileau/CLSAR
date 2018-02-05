@@ -7,6 +7,7 @@ Authors@R: c(
             person("Geva", "Maimon", role = c("aut"), email = "geva.maimon@rimuhc.ca")
             )
 Depends: R(>= 3.4.0)
+Imports: Hmisc, grid, gridExtra
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: no

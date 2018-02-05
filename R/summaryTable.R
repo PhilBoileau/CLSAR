@@ -9,10 +9,6 @@
 #' @export
 #' @import stats
 #'
-#' @examples \dontrun{
-#' summaryTable(tra3.2$COG_AFT_SCORE_2_TRM, tra3.2$SEX_ASK_TRM, "Gender")
-#' # produces a summary table of COG_AFT_SCORE_2_TRM stratified by gender
-#' }
 summaryTable <- function(vect, categories, catname, missingValues = c()){
 
   # compute the summary of the vector values
@@ -29,11 +25,12 @@ summaryTable <- function(vect, categories, catname, missingValues = c()){
 
   # count the number of non-missing values in the vector
   vectNOTMiss <- as.matrix(aggregate(vect, by=list(categories),
-                                     FUN = (function(x){length(x)-sum(is.na(x)) - sum(x %in% missingValues)})))
+                                     FUN = (function(x){length(x) - sum(is.na(x)) - sum(x %in% missingValues)})))
 
   # combine all four calculations
-  vectAll <- cbind(vectSummary[, -8],vectSD[, 2],vectNOTMiss[, 2], vectMiss[, 2])
-  colnames(vectAll)<-c(catname, "Min","Q1","Median", "Mean","Q3","Max","SD","# Observations", "# Missing")
+  vectAll <- cbind.data.frame(vectSummary[, -8],vectSD[, 2],vectNOTMiss[, 2], vectMiss[, 2])
+  colnames(vectAll) <- c(catname, "Min", "Q1", "Median", "Mean", "Q3",
+                         "Max", "SD", "# Observations", "# Missing")
 
   # return the dataframe
   return(vectAll)

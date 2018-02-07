@@ -24,4 +24,6 @@ wgtSummaryTable(vect, wgts, categories, catname, missingValues)
 loadCLSAData(path)
 compareNA(value1, value2)
 gridArrangeSharedLegend(..., ncol, nrow, position)
+createSexAgeCateg(ageVec, sexVec, categoryNum)
+recodeChronicConditions(variable)
 ```

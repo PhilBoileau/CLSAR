@@ -1,14 +1,14 @@
 #' Load CLSA Data Sets
 #'
-#' Make sure that the csv files containing the data are as follows:
-#' tracking: tra3_2.csv
-#' comprehensive: cop3_1.csv
-#' MCQ TRM: Tracking_30minQv2_Baseline.csv
-#' MCQ COM: Comprehensive_30minQv2_Baseline.csv
+#' Make sure that the csv files containing the data are as follows:  
+#' tracking: tra3_2.csv  
+#' comprehensive: cop3_1.csv  
+#' MCQ TRM: Tracking_30minQv2_Baseline.csv  
+#' MCQ COM: Comprehensive_30minQv2_Baseline.csv  
 #'
 #' @param path The path to the folder containging the data files  
 #'
-#' @return A list of 4 CLSA data sets: tracking, comprehensive
+#' @return A list of 4 CLSA data sets: tracking, comprehensive,
 #'  MCQ tracking and MCQ comprehensive
 #' 
 #' @export

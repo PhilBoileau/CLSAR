@@ -1,0 +1,77 @@
+---
+title: "PHAC Report"
+author: "Name"
+date: "Some date"
+output: pdf_document
+---
+
+```{r setup, include=FALSE, echo=FALSE, message = FALSE, warning=FALSE, results='asis', comment=NA}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(CLSAR)
+library(pander)
+library(ggplot2)
+library(knitr)
+
+# keep tables from splitting accross multiple lines, format numbers
+panderOptions("table.split.table", Inf)
+panderOptions("digits", 2)
+panderOptions("round", 2)
+panderOptions("keep.trailing.zeros", TRUE)
+options(digits = 4)
+```
+
+```{r editHook}
+# A Prefix nulling hook.
+
+# Make sure to keep the default for normal processing.
+default_output_hook <- knitr::knit_hooks$get("output")
+
+# Output hooks handle normal R console output.
+knitr::knit_hooks$set( output = function(x, options) {
+
+  comment <- knitr::opts_current$get("comment")
+  if( is.na(comment) ) comment <- ""
+  can_null <- grepl( paste0( comment, "\\s*\\[\\d?\\]" ),
+                     x, perl = TRUE)
+  do_null <- isTRUE( knitr::opts_current$get("null_prefix") )
+  if( can_null && do_null ) {
+    # By default R print output aligns at the right brace.
+    align_index <- regexpr( "\\]", x )[1] - 1
+    # Two cases: start or newline
+    re <- paste0( "^.{", align_index, "}\\]")
+    rep <- comment
+    x <- gsub( re, rep,  x )
+    re <- paste0( "\\\n.{", align_index, "}\\]")
+    rep <- paste0( "\n", comment )
+    x <- gsub( re, rep,  x )
+  }
+
+  default_output_hook( x, options )
+
+})
+
+knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
+```
+
+```{r lodaData, cache=TRUE, results='hide'}
+# load the tracking, comprehensive and mcq data
+data.list <- loadCLSAData("path")
+
+# split the data list into tracking, comprehensice and mcq data
+tra <- data.list[[1]]
+cop <- data.list[[2]]
+tra.mcq <- data.list[[3]]
+cop.mcq <- data.list[[4]]
+rm(data.list)
+
+# create the age sex categories for tra and cop dataframes
+tra$sexAgeCat <- createSexAgeCateg(ageVec = tra$AGE_NMBR_TRM,
+                                   sexVec = tra$SEX_ASK_TRM,
+                                   categoryNum = 8)
+cop$sexAgeCat <- createSexAgeCateg(ageVec = cop$AGE_NMBR_COM,
+                                   sexVec = cop$SEX_ASK_COM,
+                                   categoryNum = 8)
+```
+
+

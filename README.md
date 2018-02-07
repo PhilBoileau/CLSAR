@@ -11,7 +11,7 @@ Installation
 You can install CLSAR from github with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("PhilBoileau/CLSAR")
 ```
 
@@ -19,7 +19,9 @@ List of Functions
 -----------------
 
 ``` r
-
-summaryTable()
-wgtSummaryTable()
+summaryTable(vect, categories, catname, missingValues)
+wgtSummaryTable(vect, wgts, categories, catname, missingValues)
+loadCLSAData(path)
+compareNA(value1, value2)
+gridArrangeSharedLegend(..., ncol, nrow, position)
 ```

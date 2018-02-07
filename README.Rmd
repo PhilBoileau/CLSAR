@@ -21,14 +21,17 @@ CLSAR is a collection of R functions that makes working with CLSA data easier.
 You can install CLSAR from github with:
 
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("PhilBoileau/CLSAR")
 ```
 
 ## List of Functions
 
-```{r example, eval=FALSE}
+```{r functionList, eval=FALSE}
+summaryTable(vect, categories, catname, missingValues)
+wgtSummaryTable(vect, wgts, categories, catname, missingValues)
+loadCLSAData(path)
+compareNA(value1, value2)
+gridArrangeSharedLegend(..., ncol, nrow, position)
 
-summaryTable()
-wgtSummaryTable()
 ```

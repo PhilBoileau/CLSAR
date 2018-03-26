@@ -10,13 +10,13 @@ loadCLSAData(path)
 \item{path}{The path to the folder containging the data files}
 }
 \value{
-A list of 4 CLSA data sets: tracking, comprehensive
-MCQ tracking and MCQ comprehensive
+A list of 4 CLSA data sets, in the following order:
+tracking, comprehensive, MCQ tracking and MCQ comprehensive
 }
 \description{
 Make sure that the csv files containing the data are as follows:
-tracking: tra3_2.csv
-comprehensive: cop3_1.csv
+tracking: tra3_3.csv
+comprehensive: cop3_2.csv
 MCQ TRM: Tracking_30minQv2_Baseline.csv
 MCQ COM: Comprehensive_30minQv2_Baseline.csv
 }

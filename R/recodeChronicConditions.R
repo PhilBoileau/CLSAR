@@ -10,7 +10,7 @@
 #' @export
 #'
 recodeChronicConditions <- function(variable){
-  return(recode_factor(variable, `1` = "Yes", `2` = "No",
+  return(dplyr::recode_factor(variable, `1` = "Yes", `2` = "No",
                        `8` = "DK/NoAn/REF/MIS", `9` = "DK/NoAn/REF/MIS",
                        `-8` = "DK/NoAn/REF/MIS"))
 }

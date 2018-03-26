@@ -7,7 +7,7 @@
 #' @param nrow Number of rows in grid
 #' @param position Gird position (bottom or right)
 #'
-#' @import grid gridExtra
+#' @import grid gridExtra ggplot2
 #' @return Grid of plots with common legend 
 #' @export
 #'

@@ -1,29 +1,40 @@
-#' Create a vector of age and sex categories
+#' @title Create a Vector of Age and Sex Categories
+#' 
+#' @description
+#' This function will create a vector of the age and sex category of the
+#' the participants. Before using this function, make sure that the IDs
+#' associated with the sex and age vectors are indentically ordered. Note
+#' that if the sex vector is omitted, an age category vector will be produced.
 #'
 #' @param ageVec Vector containing the age of participants.
-#'               Make sure the ID order is identical to sexVec.
-#' @param sexVec Vector containing the gender of participants.
-#'               Make sure the ID order is identical to ageVec.
-#' @param categoryNum Number of categories of each gender to create.
-#'                    Currently supports options for categories of
-#'                    size 8 or 16.
+#' @param sexVec Vector containing the sex of participants.
+#' @param breaks Indicates the interval size in years of each category.
+#'               Currently, intervals of 5, 10 and 20 years are supported.
 #'
-#' @return Vector of age and sex category by ID 
+#' @author Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
+#' 
 #' @export
+#' @return This function returns a vector of age and sex, if specified,
+#'         categories.
 #'
-createSexAgeCateg <- function(ageVec, sexVec, categoryNum){
+#' @examples
+#' sex <- c("M", "F", "F")
+#' age <- c(40, 33, 34)
+#' ageSexVec <- createSexAgeCateg(ageVec = age, sexVec = sex,
+#'                                breaks = 5)
+createSexAgeCateg <- function(ageVec, sexVec = c(), breaks){
   
   # ensure that the right number data is entered:
   if(length(ageVec) != length(sexVec))
     stop("Please ensure that ageVec and sexVec are of the same length")
-  else if(categoryNum != 8 && categoryNum != 16)
-    stop("Please select a categoryNum of either 8 or 16.")
+  else if(breaks != 5 && breaks != 10 && breaks != 20)
+    stop("Please select a break value of either 5, 10, 20.")
   
   # intialize the age/sex category vector
   ageSex <- rep(NA, length(ageVec))
   
-  # if user requests 8 categories
-  if(categoryNum == 8){
+  # if user requests breaks of 10 years
+  if(breaks == 10){
     
     # get the age category
     ageCat <- sapply(ageVec, function(x){
@@ -33,13 +44,11 @@ createSexAgeCateg <- function(ageVec, sexVec, categoryNum){
       else if(x< 75) {age <-"65-74"}
       return(age)
     })
-    # fill the age and sex category vector
-    ageSex <- sapply(1:length(ageSex), function(x) paste(ageCat[x], sexVec[x], sep = "")) 
-  
     
-  # if user requests 16 categories
-  } else if(categoryNum == 16){
+  # if user requests breaks of 5 years
+  } else if(breaks == 5){
     
+    # get the age category
     ageCat <- sapply(ageVec, function(x){
       age <- "80-85"
       if(x < 50) {age <-"45-49"}
@@ -51,10 +60,23 @@ createSexAgeCateg <- function(ageVec, sexVec, categoryNum){
       else if(x < 80) {age <-"75-79"}
       return(age)
     })
-    # fill the age and sex category vector
-    ageSex <- sapply(1:length(ageSex), function(x) paste(ageCat[x], sexVec[x], sep = "")) 
+    
+  } else if(breaks == 20){
+    
+    # get the age category
+    ageCat <- sapply(ageVec, function(x){
+      age <- "65-85"
+      if(x < 65) {age <- "45-64"}
+      return(age)
+    })
   }
   
+  # add the sex category to the age vector if a sex vector is specified
+  if(length(sexVec) != 0)
+    catVect <- sapply(1:length(ageSex), function(x) paste(ageCat[x], sexVec[x], sep = "")) 
+  else
+    catVect <- ageVec
+  
   # return the category vector
-  return(ageSex)
+  return(catVect)
 }

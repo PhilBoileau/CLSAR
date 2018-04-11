@@ -4,8 +4,8 @@
 \alias{summaryTable}
 \title{Create Stratified Summary Tables}
 \usage{
-summaryTable(vect, categories, catname = as.character(categories),
-  missingValues = c(), weights = c())
+summaryTable(vect, categories, catname = "", missingValues = c(),
+  weights = c())
 }
 \arguments{
 \item{vect}{The vector of data to be summarized.}
@@ -23,7 +23,7 @@ Returns a table of stratified summaries.
 }
 \description{
 Creates a summary table stratified by a categorical variable. If being used for the generation of
-a report, it is recommended to use the \link\link{pander}{pander} function to format the table.
+a report, it is recommended to use the \link\link{pander} function to format the table.
 Supports the use of weighted data.
 }
 \examples{

@@ -2,22 +2,33 @@
 % Please edit documentation in R/summaryTable.R
 \name{summaryTable}
 \alias{summaryTable}
-\title{Create stratified summary tables}
+\title{Create Stratified Summary Tables}
 \usage{
-summaryTable(vect, categories, catname, missingValues = c())
+summaryTable(vect, categories, catname = as.character(categories),
+  missingValues = c(), weights = c())
 }
 \arguments{
-\item{vect}{The vector of data to be summarized}
+\item{vect}{The vector of data to be summarized.}
 
-\item{categories}{The vector of categories}
+\item{categories}{The vector of categories.}
 
-\item{catname}{The name of the categories}
+\item{catname}{The name of the categories. Defaults to the name of the category vector.}
 
-\item{missingValues}{Optionally, the vector containing the codes of the missing values.}
+\item{missingValues}{An optional vector containing the codes of the missing values.}
+
+\item{weights}{An optional vector containing the weights of the data.}
 }
 \value{
-Matrix of stratified summaries
+Returns a table of stratified summaries.
 }
 \description{
-Create stratified summary tables
+Creates a summary table stratified by a categorical variable. If being used for the generation of
+a report, it is recommended to use the \link\link{pander}{pander} function to format the table.
+Supports the use of weighted data.
+}
+\examples{
+
+}
+\author{
+Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
 }

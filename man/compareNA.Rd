@@ -2,18 +2,33 @@
 % Please edit documentation in R/compareNA.R
 \name{compareNA}
 \alias{compareNA}
-\title{Compare a value to NA}
+\title{Compare Values as NAs}
 \usage{
 compareNA(v1, v2)
 }
 \arguments{
-\item{v1}{Variable 1}
+\item{v1}{Value 1}
 
-\item{v2}{Variable 2}
+\item{v2}{Value 2}
 }
 \value{
-TRUE if v1 or v2 are both non-NA or NA. FALSE if they do ot match.
+"TRUE" will be returned in the values are identical
+and "FALSE" will be returned otherwise.
 }
 \description{
-Compare a value to NA
+Compare two values to determine if they are identical. This function
+supports the comparison of NA values, which base R does not. Note that
+vectors can also be compared, if they are the same length.
+}
+\examples{
+compareNA(1, 1)
+compareNA(1, 2)
+compareNA(1, NA)
+compareNA(NA, NA)
+compareNA(1:5, 1:5)
+compareNA(1:5, c(1:4, 6))
+
+}
+\author{
+Geva Maimon, \email{geva.maimon (at) rimuhc.ca}
 }

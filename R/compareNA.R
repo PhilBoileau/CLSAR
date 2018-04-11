@@ -1,10 +1,26 @@
-#' Compare a value to NA
+#' @title Compare Values as NAs
 #'
-#' @param v1 Variable 1
-#' @param v2 Variable 2
+#' @description
+#' Compare two values to determine if they are identical. This function
+#' supports the comparison of NA values, which base R does not. Note that
+#' vectors can also be compared, if they are the same length.
 #'
-#' @return TRUE if v1 or v2 are both non-NA or NA. FALSE if they do ot match.
+#' @param v1 Value 1
+#' @param v2 Value 2
+#' 
+#' @author Geva Maimon, \email{geva.maimon (at) rimuhc.ca}
+#' 
 #' @export
+#' @return "TRUE" will be returned in the values are identical
+#'          and "FALSE" will be returned otherwise.
+#' 
+#' @examples
+#' compareNA(1, 1)
+#' compareNA(1, 2)
+#' compareNA(1, NA)
+#' compareNA(NA, NA)
+#' compareNA(1:5, 1:5)
+#' compareNA(1:5, c(1:4, 6))
 #' 
 compareNA <- function(v1, v2) {
   
@@ -12,9 +28,8 @@ compareNA <- function(v1, v2) {
   same <- (v1 == v2) | (is.na(v1) & is.na(v2))
   
   # changes NA entry to FALSE
-  if(is.na(same))
-    same <- FALSE
+  same[is.na(same)] <- FALSE
   
-  # return boolean
+  # return boolean(s)
   return(same)
 }

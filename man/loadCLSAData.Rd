@@ -2,21 +2,28 @@
 % Please edit documentation in R/loadCLSAData.R
 \name{loadCLSAData}
 \alias{loadCLSAData}
-\title{Load CLSA Data Sets}
+\title{Load CLSA Comprehensive and Tracking Datasets}
 \usage{
 loadCLSAData(path)
 }
 \arguments{
-\item{path}{The path to the folder containging the data files}
+\item{path}{The path to the folder containging the comprehensive and
+tracking .csv files}
 }
 \value{
-A list of 4 CLSA data sets, in the following order:
-tracking, comprehensive, MCQ tracking and MCQ comprehensive
+A list of the comprehensive and tracking CLSA datasets in the following order:
+\enumerate{
+\item comprehensive
+\item tracking
+}
 }
 \description{
-Make sure that the csv files containing the data are as follows:
-tracking: tra3_3.csv
-comprehensive: cop3_2.csv
-MCQ TRM: Tracking_30minQv2_Baseline.csv
-MCQ COM: Comprehensive_30minQv2_Baseline.csv
+Load the most recent comprehensive and tracking data sets. Note that
+the .csv files must already be saved on your computer before using this
+function. Make sure that the csv files containing the data are named
+as follows:
+\itemize{
+\item comprehensive: cop3_2.csv
+\item tracking: tra3_3.csv
+}
 }

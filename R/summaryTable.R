@@ -2,7 +2,7 @@
 #'
 #' @description
 #' Creates a summary table stratified by a categorical variable. If being used for the generation of
-#' a report, it is recommended to use the \link[pkg:pander]{pander} function to format the table. 
+#' a report, it is recommended to use the \code{\link[pander]{pander}} function to format the table. 
 #' Supports the use of weighted data.
 #'
 #' @param vect The vector of data to be summarized.
@@ -17,11 +17,15 @@
 #' @export
 #' @import stats Hmisc
 #' 
-#' @examples
-#'
+#' @example
+#' summaryTable(vect = mtcars$mpg, categories = mtcars$cyl,
+#'              catname = "Cylinders")
 summaryTable <- function(vect, categories, catname = "", 
                          missingValues = c(), weights = c()){
-
+  
+  # rename the dataframe's columns
+  if(catname == "")
+    catname <- deparse(substitute(categories))
   
   if(length(weights) == 0){  
     # compute the summary of the vector values
@@ -89,10 +93,6 @@ summaryTable <- function(vect, categories, catname = "",
     vectAll <- cbind(levels(as.factor(categories)), as.data.frame(vectSummary[, 1:3]),
                      vectMean, as.data.frame(vectSummary[,4:5]), vectSD, vectNotMiss, vectMiss)
   }
-  
-  # rename the dataframe's columns
-  if(catname == "")
-    catname <- deparse(substitute(categories))
   
   colnames(vectAll)<-c(catname, "Min","Q1","Median", "Mean","Q3","Max","SD","# Observations", "# Missing")
 

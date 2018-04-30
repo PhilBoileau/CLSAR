@@ -23,11 +23,8 @@ Returns a table of stratified summaries.
 }
 \description{
 Creates a summary table stratified by a categorical variable. If being used for the generation of
-a report, it is recommended to use the \link\link{pander} function to format the table.
+a report, it is recommended to use the \code{\link[pander]{pander}} function to format the table.
 Supports the use of weighted data.
-}
-\examples{
-
 }
 \author{
 Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}

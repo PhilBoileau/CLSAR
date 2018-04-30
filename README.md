@@ -20,7 +20,6 @@ List of Functions
 
 ``` r
 summaryTable(vect, categories, catname, missingValues)
-wgtSummaryTable(vect, wgts, categories, catname, missingValues)
 loadCLSAData(path)
 compareNA(value1, value2)
 gridArrangeSharedLegend(..., ncol, nrow, position)

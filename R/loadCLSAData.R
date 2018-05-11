@@ -25,7 +25,11 @@
 #'
 #' @example 
 #' \dontrun{
-#' loadCLSAData(path = "C:/Users/Documents")
+#' dataList <- loadCLSAData(path = "C:/Users/Documents")
+#' 
+#' # tracking data set
+#' cop3.2 <- dataList[[1]]
+#' tra3.3 <- dataList[[2]]
 #' }
 loadCLSAData <- function(path){
   

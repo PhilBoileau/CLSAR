@@ -12,6 +12,7 @@ You can install CLSAR from github with:
 
 ``` r
 install.packages("devtools")
+library(devtools)
 devtools::install_github("PhilBoileau/CLSAR")
 ```
 
@@ -24,5 +25,5 @@ loadCLSAData(path)
 compareNA(value1, value2)
 gridArrangeSharedLegend(..., ncol, nrow, position)
 createSexAgeCateg(ageVec, sexVec, categoryNum)
-recodeChronicConditions(variable)
+recodeVariable(varName, varVect, dataDict)
 ```

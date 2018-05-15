@@ -26,6 +26,10 @@ Creates a summary table stratified by a categorical variable. If being used for 
 a report, it is recommended to use the \code{\link[pander]{pander}} function to format the table.
 Supports the use of weighted data.
 }
+\examples{
+summaryTable(vect = mtcars$mpg, categories = mtcars$cyl,
+             catname = "Cylinders")
+}
 \author{
 Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
 }

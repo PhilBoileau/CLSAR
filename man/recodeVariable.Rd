@@ -23,6 +23,18 @@ variable.
 \description{
 Automatically recode a categorical text variable with the help of the data dictionary.
 }
+\examples{
+\dontrun{
+library(xlxs)
+
+dataSet <- read.csv("path_to_file.csv")
+dataDict <- read.xlsx("path_to_data_dictionary.xlsx", sheetName = "Categories")
+
+recodeVariable(varName = "countryOfBirth",
+              varVect = cobVect,
+              dataDict = dictionary.df)
+}
+}
 \author{
 Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
 }

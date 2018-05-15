@@ -10,6 +10,8 @@
 #' @import grid gridExtra ggplot2
 #' @return Grid of plots with common legend 
 #' @export
+#' 
+#' @author Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
 #'
 gridArrangeSharedLegend <- function(..., ncol = length(list(...)), nrow = 1, 
                                        position = c("bottom", "right")) {

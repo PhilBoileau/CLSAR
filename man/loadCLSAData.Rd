@@ -27,3 +27,16 @@ as follows:
 \item tracking: tra3_3.csv
 }
 }
+\examples{
+ 
+\dontrun{
+dataList <- loadCLSAData(path = "C:/Users/Documents")
+
+# tracking data set
+cop3.2 <- dataList[[1]]
+tra3.3 <- dataList[[2]]
+}
+}
+\author{
+Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
+}

@@ -17,7 +17,7 @@
 #' 
 #' @export
 #' 
-#' @example
+#' @examples
 #' \dontrun{
 #' library(xlxs)
 #' 

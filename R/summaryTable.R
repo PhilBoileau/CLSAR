@@ -17,7 +17,7 @@
 #' @export
 #' @import stats Hmisc
 #' 
-#' @example
+#' @examples
 #' summaryTable(vect = mtcars$mpg, categories = mtcars$cyl,
 #'              catname = "Cylinders")
 summaryTable <- function(vect, categories, catname = "", 

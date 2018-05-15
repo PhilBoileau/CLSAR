@@ -22,3 +22,6 @@ Grid of plots with common legend
 \description{
 Plot Multiple Graphs with Shared Legend in a Grid
 }
+\author{
+Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}
+}

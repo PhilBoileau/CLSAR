@@ -4,13 +4,14 @@
 \alias{summaryTable}
 \title{Create Stratified Summary Tables}
 \usage{
-summaryTable(vect, categories, catname = "", missingValues = c(),
+summaryTable(vect, categories = c(), catname = "", missingValues = c(),
   weights = c())
 }
 \arguments{
-\item{vect}{The vector of data to be summarized.}
+\item{vect}{The vector of data to be summarized. It should be a continuous variable.}
 
-\item{categories}{The vector of categories.}
+\item{categories}{The vector of categories. If left undefined, a simple summary of
+the vect vector will be performed.}
 
 \item{catname}{The name of the categories. Defaults to the name of the category vector.}
 
@@ -25,10 +26,6 @@ Returns a table of stratified summaries.
 Creates a summary table stratified by a categorical variable. If being used for the generation of
 a report, it is recommended to use the \code{\link[pander]{pander}} function to format the table.
 Supports the use of weighted data.
-}
-\examples{
-summaryTable(vect = mtcars$mpg, categories = mtcars$cyl,
-             catname = "Cylinders")
 }
 \author{
 Phil Boileau, \email{philippe.boileau (at) rimuhc.ca}

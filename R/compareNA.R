@@ -1,4 +1,4 @@
-#' @title Compare Values as NAs
+#' @title Check if Two Values are NAs
 #'
 #' @description
 #' Compare two values to determine if they are identical. This function

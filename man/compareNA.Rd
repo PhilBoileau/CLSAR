@@ -2,7 +2,7 @@
 % Please edit documentation in R/compareNA.R
 \name{compareNA}
 \alias{compareNA}
-\title{Compare Values as NAs}
+\title{Compare two values even if they are NA}
 \usage{
 compareNA(v1, v2)
 }

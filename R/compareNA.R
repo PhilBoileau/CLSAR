@@ -1,5 +1,4 @@
-#' @title Check if Two Values are NAs
-#'
+#' @title Compare two values even if they are NA
 #' @description
 #' Compare two values to determine if they are identical. This function
 #' supports the comparison of NA values, which base R does not. Note that

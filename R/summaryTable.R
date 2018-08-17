@@ -1,4 +1,4 @@
-#' @title Create Stratified Summary Tables
+#' @title Create Stratified Summary Tables show Priscilla
 #'
 #' @description
 #' Creates a summary table stratified by a categorical variable. If being used for the generation of

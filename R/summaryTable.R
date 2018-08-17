@@ -44,7 +44,7 @@ summaryTable <- function(vect, categories = c(), catname = "",
       vectMiss <- sum(is.na(vect)) + sum(vect %in% missingValues)
       
       # count number of non-missing
-      vectNOTMiss <- length(vect) - vectMiss
+      vectNOTMiss <- NROW(vect) - vectMiss
       
       # combine all of the above statistics in a table
       vectAll <- data.frame(t(c(vectSummary, vectSD, vectNOTMiss, vectMiss)))
@@ -92,7 +92,7 @@ summaryTable <- function(vect, categories = c(), catname = "",
     
       # count the number of non-missing values in the vector
       vectNOTMiss <- as.matrix(aggregate(vect, by=list(categories),
-                                         FUN = (function(x){length(x) - sum(is.na(x)) - sum(x %in% missingValues)})))
+                                         FUN = (function(x){NROW(x) - sum(is.na(x)) - sum(x %in% missingValues)})))
     
       # combine all four calculations
       vectAll <- cbind.data.frame(vectSummary[, -8],vectSD[, 2],vectNOTMiss[, 2], vectMiss[, 2])
